@@ -2,8 +2,8 @@
 % basic code for fitting a learning model
 clear all
 close all
-cd 'T:\RLmodel\rlfit-master'
-
+pars.dirs.baseDataDir='/Volumes/NEWUSB 1/data/sensation_recall_model_RL';
+addpath('/Volumes/NEWUSB 1/code/3rdParty/subtightplot/subtightplot')
 %% Set period of interest for pupil diamter
 % Note: might want to recheck literature to find principled duration of
 % interest.  I think some papers even suggest that slightly before the
@@ -13,10 +13,10 @@ pars.pkAdjust = 50; % amount to shift from detected pks to find beginning/end of
 pars.antRespLength = 500; % for measure of pupil dilation, period to ignore prior to choice (right before choice there's typically an anticipatory response)
 pars.grabAnticResp=false;
 condition = 0;
-plotPupilRespOverTrials = false; % toggle exploratory visualization
+plotPupilRespOverTrials = true; % toggle exploratory visualization
 for ppInd = 1:45
     try
-        load(['T:\RLmodel\dataset-eyeTracker-choices\two_stage_task_sub' num2str(ppInd) '_bars' num2str(condition) '.mat'])
+        load([pars.dirs.baseDataDir filesep 'dataset-eyeTracker-choices' filesep 'two_stage_task_sub' num2str(ppInd) '_bars' num2str(condition) '.mat'])
     catch
         disp(['No data for pp' num2str(ppInd)])
     end
@@ -27,7 +27,7 @@ for ppInd = 1:45
     end
     numRows = 3;
     %% Measure and plot post-stage onset pupil resp over trials
-    for gatherStimOnset = [0]%,1]
+    for gatherStimOnset = [0,1]
         pars.gatherStimOnset = gatherStimOnset;
         if gatherStimOnset
             measOpts = [2000];%500,1000,2000,-500,-1000,-2000];

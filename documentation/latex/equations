@@ -1,0 +1,18 @@
+http://www.sciweavers.org/free-online-latex-equation-editor
+
+** 1 - 3 **
+\textit{Q}_{2}^{\textrm{MF}}\big(a_{2}, t + 1\big) = Q_{2}^{\textrm{MF}}\big(a_{2}, t\big) +  \alpha  \big(r(t) - Q_2^{\textrm{MF}}(a_{2},t)\big), \,\,\,\,\,\,\,\, \big(1\big)\\
+\\\\\\
+\textit{Q}_{1}^{\textrm{MF}}\big(a_{1}, t + 1\big) = Q_{1}^{\textrm{MF}}\big(a_{1}, t\big) +  \alpha  \big(Q_2^{\textrm{MF}}(a_{1},t) - Q_{1}^{\textrm{MF}}(a_{1},t)\big) +  \alpha  \lambda \big(r(t) - Q_2^{\textrm{MF}}(a_{1},t)\big), \,\,\,\,\,\,\,\, \big(2\big)\\
+\\\\\\
+\textit{Q}_{1}^{\textrm{MB}}\big(a_{1}, t + 1\big) = P\big(blue \;\! \vert \;\! a_{1}\big)\max\limits_{a_{2(blue)}}\big(Q_{2}^{blue}(a_{2},t)\big) + P\big(purple \;\!  \vert \;\!  a_{1}\big)\max\limits_{a_{2(purple)}}\big(Q_{2}^{purple}(a_{2},t)\big), \,\,\,\,\,\,\,\, \big(3\big)\\
+
+
+** 4 - 7 **
+\textit{P}\big(blue \;\!\vert\;\! a \big) =  \frac{1 + N\big(blue \;\!\vert\;\! a\big)}{2+N\big(blue \;\!\vert\;\! a \big) + N\big(purple \;\!\vert\;\! a \big)}, \,\,\,\,\,\,\,\, \big(4\big)\\
+\\\\\\
+\textit{Q}_{1}^{\textrm{HYB}}\big(a_{1}, t + 1\big) = \big(1-w\big)Q^{\textrm{MF}}_{1}\big(a_{1},t+1\big)+wQ_{1}^{\textrm{MB}}\big(a_{1},t+1\big), \,\,\,\,\,\,\,\, \big(5\big)\\
+\\\\\\
+\textit{P}\big(a_{2}, t \big) =  \frac{\textrm{exp}\big( \beta \big(Q_{2}^{\textrm{MF}}(a_{2},t)\big)\big)}{ \sum_{a_{2}} \textrm{exp}\big( \beta \big(Q_{2}^{MF}(a_{2},t)\big)\big) }, \,\,\,\,\,\,\,\, \big(6\big)\\
+\\\\\\
+\textit{P}\big(a_{1}, t \big) =  \frac{\textrm{exp}\big( \beta \big(Q_{1}^{\textrm{HYB}}(a_{1},t) + p \cdot 1(a_{1}) \big) \big)}{ \sum_{a_{1}} \textrm{exp}\big( \beta \big(Q_{1}^{HYB}(a_{1},t)+p \cdot 1(a_{1})\big)\big) }, \,\,\,\,\,\,\,\, \big(7\big)\\

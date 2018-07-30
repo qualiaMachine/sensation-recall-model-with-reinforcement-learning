@@ -3,7 +3,7 @@ w = warning ('off','all');
 
 % Note: 1st column is timestamp, pupil diameter is 4th col of data
 pp = two_stage_task_data.subject;
-load(['T:\RLmodel\dataset-eyeTracker-choices\edata' num2str(pp) num2str(condition) '.mat'])
+load([pars.dirs.baseDataDir filesep 'dataset-eyeTracker-choices' filesep 'edata' num2str(pp) num2str(condition) '.mat'])
 
 figCount= 0;
 plotPupilData = false; % boolean for visually checking performance of blink removal code
